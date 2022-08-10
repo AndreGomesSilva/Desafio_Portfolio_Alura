@@ -1,0 +1,48 @@
+
+
+.menu__lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.menu__link {
+    display: block;
+    font-size: 18px;
+    color: #fdfdfd;
+    text-decoration: none;
+    padding: 7px 15px;
+    
+}
+
+@media screen and (max-width: 700px) {
+    .menu__lista{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        gap: 0.8rem;
+    }
+    .menu__link {
+        display: block;
+        font-size: 1rem;
+        color: #fdfdfd;
+        text-decoration: none;
+        padding: 6px;
+    }
+    .menu__lista li {
+        opacity: 1;
+    }
+    .hobbies{
+        display: none;
+    }
+    .skills{
+        display: none;
+    }
+    li{
+        opacity: 1;
+        border-bottom: none;
+    }
+}

@@ -1,0 +1,71 @@
+.button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+    background: var(--fifth-color);
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.button:before {
+    content: '';
+    background: linear-gradient(45deg, #FF0000, #FFF700, #FF7000, #FF00FE, #3FF4EB, #9E00FF, #00BEFF, #FF00DD, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.button:active {
+    color: #000
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button:hover:before {
+    opacity: 1;
+}
+
+.button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--fifth-color);;
+    left: 0;
+    top: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
